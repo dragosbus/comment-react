@@ -1,28 +1,69 @@
-.App {
-  text-align: center;
+header {
+  font-size: 1.75rem;
+  padding: 1rem;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+form {
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+form div {
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-title {
-  font-size: 1.5em;
+form div label {
+  margin-right: 1rem;
+  font-size: 1.5rem;
 }
 
-.App-intro {
-  font-size: large;
+form div input {
+  height: 4rem;
+  width: 70%;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.25);
+  padding: 1rem;
+  font-size: 1.6rem;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+form textarea {
+  width: 70%;
+  display: block;
+  margin: 2rem auto;
+  resize: none;
+  height: 20rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
+}
+
+form button {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem 3rem;
+  border: none;
+  background: rgb(8, 179, 65);
+  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 660px) {
+  form {
+    width: 70%;
+  }
+}
+
+@media (min-width: 960px) {
+  form {
+    width: 40%;
+  }
 }
