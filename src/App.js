@@ -15,7 +15,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header comments={this.state.comments} />
-        <Form/>
+        <Form />
+        <Comments comments={this.state.comments}/>
       </div>
     );
   }

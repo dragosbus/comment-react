@@ -4,20 +4,28 @@ import React, { Component } from 'react';
 export class Form extends Component {
     constructor(props) {
         super(props);
+        this.submitForm = this.submitForm.bind(this);
+    }
+
+    submitForm() {
+        let name = this._name.value;
+        let email = this._email.value;
+        let comment = this._comment.value;
+        this.props.submitForm(name, email, comment);
     }
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.submitForm}>
                 <div>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" className="name" />
+                    <input ref={name => this._name = name}type="text" id="name" className="name" />
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
-                    <input type="email" id="email" className="email" />
+                    <input ref={email => this._email = email} type="email" id="email" className="email" />
                 </div>
-                <textarea name="comment" id="comment" placeholder="Type your comment"></textarea>
+                <textarea ref={comment => this._comment = comment} name="comment" id="comment" placeholder="Type your comment"></textarea>
             </form>
         );
     }
