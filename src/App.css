@@ -27,7 +27,7 @@ form div input {
   width: 70%;
   border-radius: 0.5rem;
   border: none;
-  box-shadow: 0 0 1rem rgba(0,0,0,0.25);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
   padding: 1rem;
   font-size: 1.6rem;
 }
@@ -71,8 +71,11 @@ form button {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  box-shadow: 0 0 1rem rgba(0,0,0,0.25);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
   padding: 1rem;
+  animation-name: fade-in;
+  animation-duration: 0.55s;
+  animation-timing-function: ease-in;
 }
 
 .comment h4 {
@@ -80,9 +83,9 @@ form button {
 }
 
 .comment p {
-text-align: center;
-margin-left: auto;
-font-size: 1.5rem;
+  text-align: center;
+  margin-left: auto;
+  font-size: 1.5rem;
 }
 
 .comment p:last-child {
@@ -95,7 +98,6 @@ font-size: 1.5rem;
   form {
     width: 70%;
   }
-
   .comment {
     width: 45%;
   }
@@ -105,8 +107,18 @@ font-size: 1.5rem;
   form {
     width: 40%;
   }
-
   .comment {
     width: 30%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50px,0,0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
   }
 }
