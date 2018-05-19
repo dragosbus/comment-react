@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Header } from './components/Header';
+import { Form } from './components/Form';
+import { Comments } from './components/Comments';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +14,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header comments={this.state.comments}/>
+        <Header comments={this.state.comments} />
+        <Form/>
       </div>
     );
   }
