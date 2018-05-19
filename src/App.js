@@ -9,9 +9,11 @@ class App extends Component {
     super(props);
     this.state = {
       id: 1,
-      comments: []
+      comments: [],
+      togglerChecked: false
     }
     this.submitForm = this.submitForm.bind(this);
+    this.toggleComments = this.toggleComments.bind(this);
   }
 
   submitForm(name, email, comment) {
@@ -29,15 +31,20 @@ class App extends Component {
         id: prevState.id + 1
       }
     });
-    console.log(this.state.comments);
+  }
+
+  toggleComments() {
+    this.setState({
+      togglerChecked: !this.state.togglerChecked
+    });
   }
 
   render() {
     return (
       <div className="App">
-        <Header comments={this.state.comments} />
+        <Header comments={this.state.comments} toggleComments={this.toggleComments} togglerChecked={this.state.togglerChecked}/>
         <Form submitForm={(name, email,comment)=>this.submitForm(name,email,comment)}/>
-        <Comments comments={this.state.comments}/>
+        <Comments togglerChecked={this.state.togglerChecked} comments={this.state.comments}/>
       </div>
     );
   }
