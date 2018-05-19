@@ -8,14 +8,35 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: 1,
       comments: []
     }
+    this.submitForm = this.submitForm.bind(this);
   }
+
+  submitForm(name, email, comment) {
+    let newComment = {
+      id: this.state.id,
+      name,
+      email,
+      comment,
+      date: new Date().toLocaleString()
+    }
+
+    this.setState(prevState => {
+      return {
+        comments: prevState.comments.concat(newComment),
+        id: prevState.id + 1
+      }
+    });
+    console.log(this.state.comments);
+  }
+
   render() {
     return (
       <div className="App">
         <Header comments={this.state.comments} />
-        <Form />
+        <Form submitForm={(name, email,comment)=>this.submitForm(name,email,comment)}/>
         <Comments comments={this.state.comments}/>
       </div>
     );

@@ -7,7 +7,8 @@ export class Form extends Component {
         this.submitForm = this.submitForm.bind(this);
     }
 
-    submitForm() {
+    submitForm(e) {
+        e.preventDefault();
         let name = this._name.value;
         let email = this._email.value;
         let comment = this._comment.value;
@@ -26,6 +27,7 @@ export class Form extends Component {
                     <input ref={email => this._email = email} type="email" id="email" className="email" />
                 </div>
                 <textarea ref={comment => this._comment = comment} name="comment" id="comment" placeholder="Type your comment"></textarea>
+                <button type="submit">Add</button>
             </form>
         );
     }
